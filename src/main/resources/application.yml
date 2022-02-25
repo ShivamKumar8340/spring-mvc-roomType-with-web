@@ -12,7 +12,8 @@ spring:
     driver-class-name: org.postgresql.Driver
     url: jdbc:postgresql://localhost:5432/atithih_db
     username: postgres
-    password: Password@123
+    password: password@123
+
   jpa:
     hibernate:
       ddl-auto: update
