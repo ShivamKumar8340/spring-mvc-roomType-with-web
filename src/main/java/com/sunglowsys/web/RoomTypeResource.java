@@ -54,5 +54,10 @@ public class RoomTypeResource {
         roomTypeService.delete(id);
         return new ModelAndView("redirect:/");
     }
+    @GetMapping("/_search/roomTypes")
+    public ModelAndView searchRoomType(@RequestParam String searchText) {
+        log.debug("wev request to search RoomType : ",searchText);
+        return new ModelAndView("index" ,"roomTypes" ,roomTypeService.search(searchText));
+    }
 
 }

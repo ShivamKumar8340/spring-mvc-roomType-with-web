@@ -9,6 +9,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
 import java.util.Optional;
 
 
@@ -45,6 +46,12 @@ public class RoomTypeServiceImpl implements RoomTypeService{
     public Optional<RoomType> findById(Long id) {
         log.debug("request to find hotelTypes : {} " ,id);
         return roomTypeRepository.findById(id);
+    }
+
+    @Override
+    public List<RoomType> search(String searchText) {
+        log.debug("request to search RoomType:{}" ,searchText);
+        return roomTypeRepository.search(searchText);
     }
 
     @Override
